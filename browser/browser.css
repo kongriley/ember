@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:300);
+
+input:focus {
+    outline: 2px solid #1E90FF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', Lucida Grande, Arial, sans-serif;
+}
+
+button,
+input {
+    outline: none;
+}
+
+.controls {
+    padding: 3px;
+    border-bottom: solid 1px #ccc;
+    background: #eee;
+}
+
+.controls * {
+    margin: 3px;
+}
+
+.controls button,
+.controls input {
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 2px;
+    padding: 0 6px;
+}
+
+button,
+input[type="submit"],
+button[disabled]:hover {
+    border: none;
+    background: transparent;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    border-color: #ccc;
+    background: #ccc;
+}
+
+button:active,
+input[type="submit"]:active {
+    border-color: #bbb;
+    background: #bbb;
+}
+
+.controls .reload {
+    font-size: 20px;
+}
+
+.loading .reload i {
+  -webkit-animation: spinner-animation 1s infinite linear;
+}
+
+.location {
+    border: solid 1px #ccc;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+}
+
+.content-item {
+    display: none;
+}
+
+#content-active {
+    display: block;
+}
+
+.controls {
+    display: -webkit-flex;
+    -webit-flex-direction: column;
+}
+
+.controls .location-form {
+    -webkit-flex: 1;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+}
+
+.content-item webview {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@-webkit-keyframes spinner-animation {
+    0% { -webkit-transform: rotate(0deg); }
+    100% {-webkit-transform: rotate(360deg); }
+}
+
+#tabs {
+    display: flex;
+    border: none;
+}
+
+.tab-item {
+    position: relative;
+    flex: 1;
+    height: 20px;
+    line-height: 20px;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+    border-left: 1px solid #999;
+    background: #bbb;
+    transition: all 0.2s ease;
+}
+.tab-item:first-child {
+    border-left: 0;
+}
+.tab-item#tab-active {
+    background: #ccc;
+}
+.tab-item .tab-close {
+    position: absolute;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #666;
+    opacity: 0;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+    z-index: 10;
+}
+.tab-item:after {
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: opacity .1s linear;
+    z-index: 1;
+}
+.tab-item:hover:not(#tab-active):after {
+    opacity: 1;
+}
+.tab-item:hover .tab-close {
+    opacity: 1;
+}
+.tab-item .tab-close:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+#newtab {
+    flex: none;
+    padding: 3px 10px;
+}

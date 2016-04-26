@@ -1,2 +1,3 @@
-# ember
-A safer, more reliable browser.
+# Paradox
+
+A small, hackable browser created with JS and Electron
