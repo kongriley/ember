@@ -1,9 +1,8 @@
 # Ember
-
 A small, hackable browser created with JS and Electron
 
 ## Installation
-Install Node.js
+Make sure you have Node.js installed, then execute the commands:
 ```
 $ git clone https://github.com/mcparadox/Ember.git
 $ cd Ember
