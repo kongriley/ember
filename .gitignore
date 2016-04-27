@@ -1,1 +1,7 @@
 /node_modules
+/Ember-darwin-x64
+/Ember-linux-ia32
+/Ember-linux-x64
+/Ember-mas-x64
+/Ember-win32-ia32
+/Ember-win32-x64
