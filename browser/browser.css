@@ -132,17 +132,6 @@ input[type="submit"]:active {
     border-radius: 3px;
     z-index: 10;
 }
-.tab-item:after {
-    position: absolute;
-    content: "";
-    background: rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    transition: opacity .1s linear;
-    z-index: 1;
-}
-.tab-item:hover:not(#tab-active):after {
-    opacity: 1;
-}
 .tab-item:hover .tab-close {
     opacity: 1;
 }

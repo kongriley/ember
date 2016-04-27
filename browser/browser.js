@@ -1,3 +1,4 @@
+require('electron-cookies');
 var remote = require('remote');
 var electron = require('electron');
 window.onresize = doLayout;
@@ -7,6 +8,12 @@ var woutline = "";
 onload = function() {
     loadTab();
     createContextMenus();
+}
+
+function blockAds() {
+var adblock = require("remove-ads");
+
+document.innerHTML = adblock(document.innerHTML);
 }
 
 function loadTab(select=false) {
@@ -93,12 +100,6 @@ function doLayout() {
 
 function handleExit(event) {
     console.log(event.type);
-    document.body.classList.add('exited');
-    if (event.type == 'abnormal') {
-        document.body.classList.add('crashed');
-    } else if (event.type == 'killed') {
-        document.body.classList.add('killed');
-    }
 }
 
 function handleLoadCommit() {
@@ -106,11 +107,8 @@ function handleLoadCommit() {
     document.querySelector('#content-active .location').value = webview.getURL();
     document.querySelector('#content-active .back').disabled = !webview.canGoBack();
     document.querySelector('#content-active .forward').disabled = !webview.canGoForward();
-    remote.getCurrentWindow().setTitle(webview.getTitle());
 
     document.querySelector('#tab-active .tab-title').innerHTML = webview.getTitle();
-
-    document.querySelector('#content-active .location').focus().select();
 }
 
 function handleLoadStart(event) {
@@ -222,7 +220,7 @@ function newTab() {
             </form>\
         </div>\
 \
-        <webview src="https://duckduckgo.com" allowpopups disablewebsecurity preload="inject.js" plugins></webview>';
+        <webview src="https://duckduckgo.com" allowpopups disablewebsecurity plugins></webview>';
 
     document.querySelector('#content').appendChild(content);
 
@@ -234,7 +232,7 @@ function closeTab(element) {
     if (element.previousElementSibling == null && element.nextElementSibling.id == "newtab") {
         navigateTo("https://duckduckgo.com")
     } else {
-        if (element.id = 'tab-active') {
+        if (element.id == 'tab-active') {
             if (element.previousElementSibling == null) {
                 element.nextElementSibling.id = "tab-active";
                 document.querySelector('#content').children[index+1].id = "content-active";

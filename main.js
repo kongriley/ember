@@ -8,8 +8,12 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-    mainWindow = new BrowserWindow({width: 1024, height: 768 });
-    mainWindow.loadUrl('file://' + __dirname + '/browser/browser.html');
+    mainWindow = new BrowserWindow({
+        width: 1024,
+        height: 768,
+        frame: false
+    });
+    mainWindow.loadURL('file://' + __dirname + '/browser/browser.html');
     createMenus();
 });
 
@@ -62,7 +66,7 @@ function createMenus() {
                 {
                     label: 'Reload',
                     accelerator: 'CmdOrCtrl+R',
-                    click: function() { mainWindow.webContents.executeJavaScript("webview.reload();"); }
+                    click: function() { mainWindow.webContents.executeJavaScript("var webview = document.querySelector('#content-active webview'); webview.reload();"); }
                 },
                 {
                     label: 'Toggle Full Screen',
@@ -102,6 +106,7 @@ function createMenus() {
                     })(),
                     click: function() {
                         mainWindow.webContents.executeJavaScript("\
+                        var webview = document.querySelector('#content-active webview');\
                         if (webview.isDevToolsOpened()){\
                             webview.closeDevTools();\
                         } else {\
