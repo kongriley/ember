@@ -1,8 +1,8 @@
 # Ember
 A safer, more reliable web browser.
 
-## Installation
-Make sure you have Node.js and Electron installed, then execute the commands:
+## Installing Dev Builds
+Make sure you have [Node.js](https://nodejs.org) and [Electron](https://electron.atom.io) installed, then execute the commands:
 ```
 $ git clone https://github.com/mcparadox/ember.git
 $ cd Ember
