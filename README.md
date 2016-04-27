@@ -1,5 +1,5 @@
 # Ember
-A small, hackable browser created with JS and Electron
+A safer, more reliable web browser.
 
 ## Installation
 Make sure you have Node.js installed, then execute the commands:
