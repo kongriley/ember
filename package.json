@@ -16,8 +16,5 @@
   "dependencies": {
     "electron-prebuilt": "^0.37.7",
     "electron-cookies": "^1.1.0"
-  },
-  "devDependencies": {
-    "electron-packager": "^7.0.1"
   }
 }
