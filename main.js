@@ -1,4 +1,5 @@
 var app = require('app');
+var electron = require('electron');
 var remote = require('electron').remote;
 var BrowserWindow = require('browser-window');
 var mainWindow = null;
@@ -8,7 +9,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
-    var size = electronScreen.getPrimaryDisplay().workAreaSize;
+    var size = electron.screen.getPrimaryDisplay().workAreaSize;
     mainWindow = new BrowserWindow({ width: size.width, height: size.height });
     mainWindow.loadURL('file://' + __dirname + '/browser/browser.html');
     createMenus();
