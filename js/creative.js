@@ -8,13 +8,12 @@
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('a.page-scroll').each(function() {
-        $(this).bind('click', function(event) {
-            $('html, body').stop().animate({
-                scrollTop: ($($(this).attr('href')).offset().top - 50)
-            }, 1250, 'easeInOutExpo');
-            event.preventDefault();
-        });
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
     });
 
     // Highlight the top nav as scrolling occurs
@@ -24,7 +23,7 @@
     })
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    $('.navbar-collapse ul li a:not(.dropdown-toggle)').click(function() {
         $('.navbar-toggle:visible').click();
     });
 
