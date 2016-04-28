@@ -8,10 +8,10 @@ app.on('window-all-closed', function() {
 });
 
 app.on('ready', function() {
+    var size = electronScreen.getPrimaryDisplay().workAreaSize;
     mainWindow = new BrowserWindow({
-        width: 1024,
-        height: 768,
-        frame: false
+        width: size.width,
+        height: size.height
     });
     mainWindow.loadURL('file://' + __dirname + '/browser/browser.html');
     createMenus();
