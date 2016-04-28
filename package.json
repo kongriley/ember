@@ -2,7 +2,7 @@
   "name": "Ember",
   "productName": "Ember",
   "version": "0.2.0",
-  "description": "A safer, more reliable browser",
+  "description": "A safer, more reliable web browser.",
   "license": "LGPL-3.0",
   "repository": "mcparadox/Ember",
   "author": {
