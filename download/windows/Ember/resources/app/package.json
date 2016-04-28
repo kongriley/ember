@@ -1,0 +1,23 @@
+{
+  "name": "Ember",
+  "productName": "Ember",
+  "version": "0.2.0",
+  "description": "A safer, more reliable browser",
+  "license": "LGPL-3.0",
+  "repository": "mcparadox/Ember",
+  "author": {
+    "name": "Oliver Ni",
+    "email": "oliver.ni@gmail.com"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron-prebuilt": "^0.37.7",
+    "electron-cookies": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^7.0.1"
+  }
+}
