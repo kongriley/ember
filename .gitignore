@@ -5,4 +5,5 @@
 /Ember-mas-x64
 /Ember-win32-ia32
 /Ember-win32-x64
+/dist
 */.DS_Store
